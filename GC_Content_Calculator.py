@@ -11,4 +11,4 @@ def percentage_GC(sequence): #Defining a function in python
 
 sequence = "ATCTGTCGTACGTCAGT"
 print(sequence)
-print(percentage_GC(sequence))
+print(percentage_GC(sequence), "%")

@@ -1,16 +1,16 @@
 # GC_Content_Calculator
 
-## What It Does
+## What It Does?
 A Python script that calculates the GC content percentage 
 of a DNA sequence. GC content is an important measure in 
 molecular biology — it affects DNA stability, melting 
 temperature, and is used in primer design and genome analysis.
 
-## Why I Built This
+## Why I Built This?
 This was my first bioinformatics Python project, built to 
 apply Python basics to real biological sequence analysis.
 
-## How to Use It
+## How to Use It?
 1. Clone this repository
 2. Run: python gc_content_calculator.py
 3. Enter your DNA sequence when prompted
@@ -18,9 +18,10 @@ apply Python basics to real biological sequence analysis.
 
 ## Example
 Input:  ATGCGCATTAGC
+
 Output: GC Content = 41.67%
 
-## What I Learned
+## What I Learned?
 - Python string manipulation
 - Applying biological rules in code
 - Basic input/output handling

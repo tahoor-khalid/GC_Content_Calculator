@@ -1,32 +1,57 @@
 # GC_Content_Calculator
 
-## What It Does?
-A Python script that calculates the GC content percentage 
-of a DNA sequence. GC content is an important measure in 
-molecular biology — it affects DNA stability, melting 
-temperature, and is used in primer design and genome analysis.
+## Problem Statement
 
-## Why I Built This?
-This was my first bioinformatics Python project, built to 
-apply Python basics to real biological sequence analysis.
+Antimicrobial resistance genes, such as *gyrA* in *Salmonella Typhi*, are often
+analyzed for sequence-level properties like GC content, which can affect DNA
+stability, mutation rates, and how genes are studied computationally. This
+tool addresses the need for a quick, reusable way to calculate GC content
+directly from real gene sequence data, rather than manually computing it for
+each new sequence.
 
-## How to Use It?
-1. Clone this repository
-2. Run: python gc_content_calculator.py
-3. Enter your DNA sequence when prompted
-4. The script returns the GC content percentage
+## What This Tool Does
 
-## Example
-Input:  ATGCGCATTAGC
+A Python tool that reads a DNA sequence from a FASTA file and calculates the
+GC content (percentage of Guanine and Cytosine bases) of that sequence,
+using [Biopython](https://biopython.org/) to handle real biological data
+rather than hardcoded examples.
 
-Output: GC Content = 41.67%
+## Example Data
 
-## What I Learned?
-- Python string manipulation
-- Applying biological rules in code
-- Basic input/output handling
+- **Gene used:** *gyrA*, *Salmonella Typhi*
+- **Source:** NCBI GenBank, accession [ON220744](https://www.ncbi.nlm.nih.gov/nuccore/ON220744)
+- **Relevance:** *gyrA* mutations are linked to fluoroquinolone resistance —
+  connected to my Master's thesis research on antimicrobial resistance in
+  *Salmonella typhi*.
 
-## Next Steps
-- Add support for reading FASTA files
-- Add batch processing for multiple sequences
-- Add visualization of nucleotide composition
+## Requirements
+
+- Python 3.x
+- Biopython (`pip install biopython`)
+
+## Usage
+
+```bash
+python gc_calculator.py
+```
+
+(The script currently reads `sequence.fasta` directly — make sure it's in
+the same folder as the script.)
+
+## Sample Output
+
+Running the tool on the gyrA gene sequence produces:
+
+```
+ON220744.1
+ON220744.1 Salmonella enterica subsp. enterica serovar Typhi strain JKT-B2016-1 DNA gyrase subunit A (gyrA) gene, partial cds
+TCTGCCCGTGTCGTTGGTGACGTAATCGGTAAATACCATCCCCACGGCGATTCCGCAGTGTATGACACCA...
+372
+54.03 %
+```
+
+## How It Works
+
+The script uses Biopython's `SeqIO.read()` to parse a single-sequence FASTA
+file, then a custom `percentage_GC()` function counts the G and C bases in
+the sequence and calculates their percentage of the total sequence length.
